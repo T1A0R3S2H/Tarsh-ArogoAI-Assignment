@@ -1,37 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Powered Blog Website
 
-## Getting Started
+A full-stack AI-powered blog website built using **Express.js**, **MongoDB**, **React**, and **Next.js**. This project provides a simple blog API that allows users to create, manage, and view blog posts, as well as generate AI summaries for posts.
+[Demo](https://tarsh-arogo-ai-assignment.vercel.app/posts)
 
-First, run the development server:
+---
 
+## Features
+
+### Backend:
+- **CRUD Operations**: Create, read, update, and delete blog posts.
+- **AI Summary**: Generate summaries for blog posts using the Gemini API.
+- **MongoDB**: Stores blog posts in a MongoDB database (local or cloud).
+- **Environment Variables**: Configured with `dotenv`.
+
+### Frontend:
+- **CRUD Operations**: Create, read, update, and delete blog posts.
+- **AI Summary**: Generate summaries for blog posts.
+- **React**: For building dynamic user interfaces.
+- **Next.js**: For optimized server-side rendering and routing.
+- **Tailwind CSS**: A utility-first CSS framework for building responsive layouts.
+
+---
+
+## Technologies Used
+
+### Backend:
+- **Express.js** (Web framework)
+- **MongoDB** (Database)
+- **Gemini API** (For generating AI summaries)
+- **dotenv** (For managing environment variables)
+
+### Frontend:
+- **React** (Frontend framework)
+- **Next.js** (Framework for React)
+- **Tailwind CSS** (Utility-first CSS framework)
+
+---
+
+## Setup Instructions
+
+### 1. Prerequisites
+
+Ensure you have the following installed on your machine:
+- **Node.js** (>= 14.x)
+- **MongoDB** (either local or cloud, e.g., MongoDB Atlas)
+- **Git** (For cloning the repository)
+
+### 2. Backend Setup
+
+#### Clone the repository and install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/T1A0R3S2H/Tarsh-ArogoAI-Assignment.git
+cd arogo-ai/backend
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Configure Environment Variables:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Create a `.env` file inside the `backend` directory and add the following:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+GEMINI_API_KEY=Your_Gemini_API_Key
+MONGO_URI=mongodb://localhost:27017/ai-blog
+```
 
-## Learn More
+- **GEMINI_API_KEY**: Your Gemini API key (for AI summaries).
+- **MONGODB_URI**: Your MongoDB connection string.
+- 
 
-To learn more about Next.js, take a look at the following resources:
+#### Build the project:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Start the application:
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### For development:
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Frontend Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Tarsh-ArogoAI-Assignment
+#### Clone the repository and install dependencies:
+```bash
+git clone https://github.com/T1A0R3S2H/Tarsh-ArogoAI-Assignment.git
+npm install
+```
+
+#### Configure Environment Variables:
+
+- **NEXT_PUBLIC_API_URL**: The backend API URL (if running locally, use `http://localhost:5000`).
+
+#### Start the frontend application:
+```bash
+npm start
+```
+
+#### For development:
+```bash
+npm run dev
+```
+
+---
+
+## Endpoints
+
+### Backend Endpoints
+
+#### Posts Management (`/v1/posts`)
+
+| Method | Endpoint          | Description               |
+|--------|-------------------|---------------------------|
+| `GET`  | `/v1/posts`       | Get all blog posts        |
+| `POST` | `/v1/posts`       | Create a new blog post    |
+| `PUT`  | `/v1/posts/:id`   | Update an existing post   |
+| `DELETE` | `/v1/posts/:id` | Delete a blog post        |
+| `GET`  | `/v1/posts/:id`   | Get a single blog post    |
+
+---
+
+## Demo
+
+You can view a live demo of the frontend and interact with the API once both the backend and frontend are up and running on your local machine.
+and also here: https://tarsh-arogo-ai-assignment.vercel.app/posts
